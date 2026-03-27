@@ -166,6 +166,7 @@ proxy-groups:
   - { name: YouTube, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png, include-all: true}
   - { name: 漏网之鱼, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png, include-all: true }
   - { name: 直连, <<: *SelectDirect, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png, hidden: true }
+  - { name: dialer, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png, include-all: true}
   # 这里只匹配了一些常用地区的分组
   - { name: 香港, <<: *UrlTest, filter: 🇭🇰|香港|港|HK|hongkong|hong kong, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png }
   - { name: 澳门, <<: *UrlTest, filter: 🇲🇴|澳门|门|MO|macao, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Macao.png }
@@ -187,23 +188,12 @@ proxy-groups:
   - { name: 其他, <<: *UrlTest, filter: '(?i)^(?!.*(香港|台湾|日本|韩国|新加坡|美国|英国|德国|法国|印度|泰国|越南|印尼|澳大利亚|巴西|港|台|日|韩|新|美|英|德|法|印|泰|越|尼|澳|巴|hk|tw|jp|kr|sg|us|uk|de|fr|in|th|vn|id|au|br)).*', icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png }
 
 proxies:
-- name: "ss://YWVzLTI1Ni1nY206SXpwc3Q4aU9ONytPcGQ3cDNnV2VaTEN5YzB6SWRJczNGM0FnM1ZzNUQvWT0@a.fachost.cc.cd:29335/?type=tcp#%40nuvole9"
+- name: "seed台湾家宽"
   dialer-proxy: dialer
   
 
-proxy-providers1:
-  provider1:
-    type: http
-    url: "http://127.0.0.1:38324/download/%E8%8A%B1%E4%BA%91?target=ClashMeta"
 
-proxy-groups1:
-- name: dialer
-  type: select
-  use:
-  - provider1
 
-rules1:
-  - MATCH,ss1
 # 规则锚点，是为了减少重复配置
 rule-anchor:
   DomainYaml: &DomainYaml { behavior: domain, interval: 86400, proxy: 手动选择, type: http }
@@ -268,3 +258,4 @@ rules:
   - RULE-SET,Hijacking,DIRECT
   # 没有匹配到规则的全部走[漏网之鱼]的这个规则
   - MATCH,漏网之鱼
+  - MATCH,seed台湾家宽
