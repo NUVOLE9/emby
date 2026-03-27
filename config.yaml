@@ -238,23 +238,22 @@ rules:
   - RULE-SET,DNSLeak,手动选择
   - RULE-SET,China,直连,no-resolve
   - RULE-SET,Telegram,Telegram
-  - RULE-SET,Gemini,Gemini
-  - RULE-SET,Google,Google
-  - RULE-SET,Github,Github
-  - RULE-SET,YouTube,YouTube
+  - RULE-SET,Gemini,dialer
+  - RULE-SET,Google,dialer
+  - RULE-SET,Github,dialer
+  - RULE-SET,YouTube,dialer
   - RULE-SET,BiliBili,BiliBili
-  - RULE-SET,Microsoft,Microsoft
+  - RULE-SET,Microsoft,dialer
   - RULE-SET,OneDrive,OneDrive
-  - RULE-SET,TikTok,TikTok
-  - RULE-SET,Spotify,Spotify
-  - RULE-SET,Netflix,Netflix
-  - RULE-SET,Disney,Disney
-  - RULE-SET,OpenAI,OpenAI
-  - RULE-SET,Twitter,Twitter
-  - RULE-SET,Claude,Claude
+  - RULE-SET,TikTok,dialer
+  - RULE-SET,Spotify,dialer
+  - RULE-SET,Netflix,dialer
+  - RULE-SET,Disney,dialer
+  - RULE-SET,OpenAI,dialer
+  - RULE-SET,Twitter,dialer
+  - RULE-SET,Claude,dialer
   - RULE-SET,Steam,Steam
   - RULE-SET,Emby,Emby
   - RULE-SET,Hijacking,DIRECT
   # 没有匹配到规则的全部走[漏网之鱼]的这个规则
-  - MATCH,漏网之鱼
   - MATCH,seed台湾家宽
