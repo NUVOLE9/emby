@@ -9,6 +9,8 @@ proxy-providers:
     override:
       additional-prefix: 'p1 | '  # 订阅节点前缀，方便区分该节点属于哪个订阅链接 例如`p1 | 香港🇭🇰
 
+proxies:
+- {"name":"seed台湾家宽","server":"a.fachost.cc.cd","port":29335,"cipher":"aes-256-gcm","password":"Izpst8iON7+Opd7p3gWeZLCyc0zIdIs3F3Ag3Vs5D/Y=","tfo":false,"udp":true,"block-quic":"on","type":"ss",dialer-proxy: dialer}
 
 # 通用配置
 mode: rule
@@ -165,6 +167,7 @@ proxy-groups:
   - { name: Twitter, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Twitter.png, include-all: true }
   - { name: YouTube, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png, include-all: true}
   - { name: 漏网之鱼, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png, include-all: true }
+  - { name: dialer, <<: *SelectProxy, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png, use:p1 }
   - { name: 直连, <<: *SelectDirect, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png, hidden: true }
   # 这里只匹配了一些常用地区的分组
   - { name: 香港, <<: *UrlTest, filter: 🇭🇰|香港|港|HK|hongkong|hong kong, icon: https://testingcf.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png }
@@ -254,3 +257,4 @@ rules:
   - RULE-SET,Hijacking,DIRECT
   # 没有匹配到规则的全部走[漏网之鱼]的这个规则
   - MATCH,漏网之鱼
+  - MATCH,seed台湾家宽
